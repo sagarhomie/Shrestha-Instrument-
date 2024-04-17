@@ -1,0 +1,92 @@
+package cn.sagar.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cn.sagar.OrderModel;
+import cn.sagar.User;
+import cn.sagar.cart;
+import cn.sagar.connection.dbCon;
+import cn.sagar.dao.orderdao;
+import cn.sagar.dao.UserDao;
+
+/**
+ * Servlet implementation class OrderNowServlet
+ */
+@WebServlet("/OrderNowServlet")
+public class OrderNowServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		try(PrintWriter write= response.getWriter()){
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = new Date();
+			User auth = (User) request.getSession().getAttribute("auth");
+			if(auth!=null) {
+				String productId = request.getParameter("id");
+				int productQuantity = Integer.parseInt(request.getParameter("quantity"));
+				if(productQuantity<=0) {
+					productQuantity=1;
+				}
+				OrderModel order = new OrderModel();
+				order.setId(Integer.parseInt(productId));
+				order.setUid(auth.getId());
+				order.setDate(formatter.format(date));
+				orderdao orderd= new orderdao(dbCon.getConnection());
+				boolean result = orderd.insertOrder(order);
+				if(result) {
+					ArrayList<cart> cart_list =(ArrayList<cart>) request.getSession().getAttribute("cart-list");
+					if(cart_list!=null) {
+						for(cart c:cart_list) {
+							if(c.getId()==Integer.parseInt(productId)) {
+								cart_list.remove(cart_list.indexOf(c));
+								break;
+							}
+						}
+					}
+				
+						
+					response.sendRedirect("orders.jsp");
+				}
+				
+						else {
+					write.print("order failed");
+				}}
+			
+			
+			
+			else {
+				response.sendRedirect("login.jsp");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

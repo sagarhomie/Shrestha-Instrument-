@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="cn.sagar.OrderModel"/>
+    <fullyQualifiedTypeName name="cn.sagar.connection.dbCon"/>
+    <fullyQualifiedTypeName name="cn.sagar.dao.UserDao"/>
+    <fullyQualifiedTypeName name="java.io.Writer"/>
+</qualifiedTypeNameHistroy>

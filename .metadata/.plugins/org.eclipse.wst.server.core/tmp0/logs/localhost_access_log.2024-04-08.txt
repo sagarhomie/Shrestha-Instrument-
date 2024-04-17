@@ -1,0 +1,10 @@
+127.0.0.1 - - [08/Apr/2024:21:30:04 +0545] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:06 +0545] "GET /Ecommerce/login.jsp HTTP/1.1" 200 2677
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:07 +0545] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:15 +0545] "POST /Ecommerce/user-LoginServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:15 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 5919
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:15 +0545] "GET /Ecommerce/product-images/dhimey.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:15 +0545] "GET /Ecommerce/product-images/sanodhimey.jpeg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:15 +0545] "GET /Ecommerce/product-images/kheen.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:15 +0545] "GET /Ecommerce/product-images/bhusay.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [08/Apr/2024:21:30:15 +0545] "GET /Ecommerce/product-images/Taa.jpg HTTP/1.1" 304 -

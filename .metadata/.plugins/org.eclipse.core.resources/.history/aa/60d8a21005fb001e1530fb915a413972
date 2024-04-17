@@ -1,0 +1,14 @@
+package cn.sagar;
+
+import java.util.List;
+
+public class search extends Product {
+	public String search;
+	public search() {
+		
+	}
+	public List<Product> searched(){
+		return 
+	}
+
+}
