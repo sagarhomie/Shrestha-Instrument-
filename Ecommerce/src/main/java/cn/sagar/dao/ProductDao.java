@@ -14,6 +14,7 @@ public class ProductDao {
 	private String query;
 	private PreparedStatement pst;
 	private ResultSet rs;
+	private String names;
 	public ProductDao(Connection con) {
 		this.con = con;
 	}
@@ -86,6 +87,31 @@ public double getTotalCartPrice(ArrayList<cart> cartList) {
 		e.printStackTrace();
 	}
 	return sum;
+}
+public List<Product> searchedItem(String name){
+	
+	List<Product> list = new ArrayList<Product>();
+	try{
+		query = "select * from ecommerce_product where name=?";
+		pst = this.con.prepareStatement(query);
+		pst.setString(1,name);
+		rs = pst.executeQuery();
+		while(rs.next()) {
+			Product search = new Product();
+			search.setId(rs.getInt("id"));
+			search.setName(rs.getString("name"));
+			search.setCategory(rs.getString("category"));
+			search.setPrice(rs.getDouble("price"));
+			search.setImage(rs.getString("image"));
+			list.add(search);
+		}
+		return list;
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	return list;
+	
 }
 
 }

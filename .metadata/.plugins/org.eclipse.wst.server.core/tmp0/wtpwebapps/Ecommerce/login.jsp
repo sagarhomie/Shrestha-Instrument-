@@ -52,6 +52,6 @@ if(cart_list != null){
 
 	</div>
 	
-	<%@include file="includes/footer.jsp"%>
+	
 </body>
 </html>
