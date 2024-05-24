@@ -15,6 +15,7 @@ if (auth != null) {
 }
 ProductDao pd= new ProductDao(dbCon.getConnection()); 
 List<Product>products = pd.getAllProducts();
+List<Product>westernproduct=pd.getWesternProduct();
 ArrayList<cart> cart_list = (ArrayList<cart>) session.getAttribute("cart-list");
 List<cart> cartProduct = null;
 if(cart_list != null){
@@ -67,7 +68,36 @@ object-fit:cover;
 			
 
 			</div>
+				<div class="card-header my-3">Western Musical instruments</div>
+		<div class="row">
+		<%
+		if(!westernproduct.isEmpty()){
+			for(Product ps:westernproduct){%>
+				<div class="col-md-3 my-3 lg-3">
+				<div class="card h-100 w-100" style="width: 18rem;">
+					<img src="product-images/<%=ps.getImage() %>" class="card-img-top img-fluid img-fit" alt="dhimey">
+					<div class="card-body mt-1 pt-2">
+						<h5 class="card-title"><%= ps.getName()%></h5>
+						<h6 class="price">Price:Rs <%=ps.getPrice()%></h6>
+						<h6 class="price">Category:<%= ps.getCategory()%></h6>
+						<div class="mt-7 d-flex justify-content-between">
+						<a href="cartServlet?id=<%=ps.getId() %>" class="btn btn-dark">Add to cart</a>
+						<a href="OrderNowServlet?quantity=1&id=<%=ps.getId() %>" class="btn btn-primary">Buy Now</a>
+						</div>
+						
+					</div>
+					</div>
+					</div>
+					
+				
+			<%}
+		}%>
+			
+
+			</div>
+		
 		</div>
+		
 	
 	<%@include file="includes/footer.jsp"%>
 </body>

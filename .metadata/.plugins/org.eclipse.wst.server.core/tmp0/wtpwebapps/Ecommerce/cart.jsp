@@ -36,6 +36,14 @@ if (cart_list != null) {
 	box-shadow: none;
 	font-size: 25px;
 }
+footer{
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;}
 </style>
 
 </head>
@@ -94,7 +102,7 @@ if (cart_list != null) {
 
 		</table>
 	</div>
-
-	<%@include file="includes/footer.jsp"%>
+<footer><%@include file="includes/footer.jsp"%></footer>
+	
 </body>
 </html>

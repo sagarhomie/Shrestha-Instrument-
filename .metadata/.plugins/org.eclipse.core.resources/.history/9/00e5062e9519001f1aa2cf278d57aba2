@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="cn.sagar.User"%>
+<%@page import="cn.sagar.dao.ProductDao"%>
+<%@page import="java.util.*"%>
+<%@page import="cn.sagar.cart" %>
+
+<%@page import="cn.sagar.Product"%>
+<%@page import="cn.sagar.servlet.*"%>
+<%@page import="cn.sagar.connection.dbCon"%>
+<%
+User auth = (User) request.getSession().getAttribute("auth");
+if (auth != null) {
+	request.setAttribute("auth", auth);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Shrestha Instrument</title>
+    <%@include file="includes/header.jsp"%>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<%@include file="includes/navbar.jsp"%>
+    <header>
+    
+        <h1>About Shrestha Instrument</h1>
+    </header>
+    <main>
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>At Shrestha Instrument, our mission is to preserve and promote the rich musical heritage of Nepal by offering authentic Newari instruments and other musical products. We are committed to providing high-quality instruments to musicians, enthusiasts, and collectors around the world.</p>
+        </section>
+        <section class="offer">
+            <h2>What We Offer</h2>
+            <ul>
+                <li>Traditional Newari Instruments</li>
+                <li>Other Musical Instruments</li>
+                <li>Cash on Delivery</li>
+            </ul>
+        </section>
+        <section class="why-choose">
+            <h2>Why Choose Shrestha Instrument?</h2>
+            <ul>
+                <li>Authenticity</li>
+                <li>Quality</li>
+                <li>Convenience</li>
+            </ul>
+        </section>
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? Please feel free to contact us at <a href="mailto:info@shresthainstrument.com">info@shresthainstrument.com</a> or call us at <a href="tel:+123456789">+123456789</a>. Our friendly customer service team is here to help.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Shrestha Instrument. All rights reserved.</p>
+    </footer>
+</body>
+</html>

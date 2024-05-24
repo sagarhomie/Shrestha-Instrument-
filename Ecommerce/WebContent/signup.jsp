@@ -1,0 +1,142 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Shrestha Instrument</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 1.5em;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: blue;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sign Up - Shrestha Instrument</h1>
+    </header>
+    <main>
+        <section class="signup-form">
+            <h2>Create Your Account</h2>
+            <form action="#" method="POST">
+                <div>
+                    <label for="fullname">Full Name:</label><br>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div>
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <label for="confirm-password">Confirm Password:</label><br>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div>
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+            <p>Already have an account? <a href="login.jsp">Log In</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Shrestha Instrument. All rights reserved.</p>
+    </footer>
+</body>
+</html>

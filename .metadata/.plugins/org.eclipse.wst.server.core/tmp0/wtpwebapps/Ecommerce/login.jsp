@@ -46,12 +46,15 @@ if(cart_list != null){
 						<button type="submit" class="btn btn-primary">Login</button>
 					</div>
 				</form>
+				<p>Don't have an account? <a href="signup.jsp">sign up</a>
 			</div>
 
 		</div>
 
 	</div>
-	
+<script>
+ 
+</script>	
 	
 </body>
 </html>

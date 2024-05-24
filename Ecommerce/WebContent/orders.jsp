@@ -25,6 +25,16 @@ if (cart_list != null) {
 
 <title>Order</title>
 <%@include file="includes/header.jsp"%>
+<style>
+footer{
+
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;}</style>
 
 </head>
 <body>
@@ -48,6 +58,7 @@ if (cart_list != null) {
 			<tbody>
 			</tbody>
 		</table>
-		<%@include file="includes/footer.jsp"%>
+		<footer><%@include file="includes/footer.jsp"%></footer>
+		
 </body>
 </html>

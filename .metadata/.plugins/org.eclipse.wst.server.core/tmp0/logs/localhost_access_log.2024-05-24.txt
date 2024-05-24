@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:38:10 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 4595
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:38:11 +0545] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:38:36 +0545] "GET /Ecommerce/includes/footer.jsp HTTP/1.1" 200 2363
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:38:44 +0545] "GET /Ecommerce/login.jsp HTTP/1.1" 200 2574
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:38:50 +0545] "POST /Ecommerce/user-LoginServlet HTTP/1.1" 200 17
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:38:59 +0545] "POST /Ecommerce/user-LoginServlet HTTP/1.1" 200 17
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:39:06 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 4535
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:39:11 +0545] "GET /Ecommerce/includes/footer.jsp HTTP/1.1" 200 2303
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:39:22 +0545] "GET /Ecommerce/login.jsp HTTP/1.1" 200 2574
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:39:27 +0545] "POST /Ecommerce/user-LoginServlet HTTP/1.1" 200 17
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:39:40 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 4535
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:39:41 +0545] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:39:48 +0545] "GET /Ecommerce/cart.jsp HTTP/1.1" 200 4746
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:39:50 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 4535
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:40:08 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 4535
+0:0:0:0:0:0:0:1 - - [24/May/2024:11:40:11 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 4535

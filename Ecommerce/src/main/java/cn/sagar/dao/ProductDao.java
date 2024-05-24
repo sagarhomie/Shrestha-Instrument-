@@ -40,6 +40,30 @@ public List<Product>getAllProducts(){
 	
 	return products;
 }
+public List<Product>getWesternProduct(){
+	List<Product>products= new ArrayList<Product>();
+	try {
+		query = "select * from ecommerce_westerncategory ";
+		
+		pst = this.con.prepareStatement(query);
+	
+		rs = pst.executeQuery();
+		while(rs.next()) {
+			Product row = new Product();
+			row.setId(rs.getInt("id"));
+			row.setName(rs.getString("name"));
+			row.setCategory(rs.getString("category"));
+			row.setPrice(rs.getDouble("price"));
+			row.setImage(rs.getString("image"));
+			products.add(row);
+			
+		}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	
+	return products;
+}
 public List<cart>getCartProducts(ArrayList<cart> cartList)
 {
 	List<cart>products= new ArrayList<cart>();

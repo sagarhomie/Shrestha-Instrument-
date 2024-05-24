@@ -4,18 +4,20 @@
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css" rel="stylesheet">
 
+<style>
 
-<div class="container-fluid bg-dark text-white py-5">
+</style>
+<div class="container-fluid  bg-dark text-white py-5  border-top footer">
     <div class="container">
         <div class="row">
             <!-- Footer Navigation -->
             <div class="col-md-4">
                 <h5>Navigation</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white text-decoration-none">Home</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">About</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Services</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                    <li><a href="index.jsp" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="about.jsp" class="text-white text-decoration-none">About</a></li>
+                    <li><a href="services.jsp" class="text-white text-decoration-none">Services</a></li>
+                    <li><a href="contact.jsp" class="text-white text-decoration-none">Contact</a></li>
                 </ul>
             </div>
 
@@ -33,7 +35,7 @@
             <!-- Copyright -->
             <div class="col-md-4">
                 <h5>Copyright</h5>
-                <p>&copy; 2024 Your Company. All rights reserved.</p>
+                <p>&copy; 2024 Shrestha Instrument. All rights reserved.</p>
             </div>
         </div>
     </div>
