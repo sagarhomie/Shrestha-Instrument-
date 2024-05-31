@@ -1,0 +1,40 @@
+package cn.sagar.servlet;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cn.sagar.User;
+import cn.sagar.connection.dbCon;
+import cn.sagar.dao.UserDao;
+
+@WebServlet("/admin")
+public class AdminServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+
+        // Example actions
+        if ("view_users".equals(action)) {
+        	
+        	response.sendRedirect("userdetail.jsp");
+            // Example logic to view users
+            
+        } else if ("manage_posts".equals(action)) {
+            // Example logic to manage posts
+            String message = "Managing posts...";
+            request.setAttribute("message", message);
+            request.getRequestDispatcher("admin.jsp").forward(request, response);
+        } else {
+            // Handle unknown actions
+            String message = "Unknown action";
+            request.setAttribute("message", message);
+            request.getRequestDispatcher("admin.jsp").forward(request, response);
+        }
+    }
+}

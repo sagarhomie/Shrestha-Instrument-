@@ -73,7 +73,7 @@ position: fixed;
 					<td><%=c.getName()%></td>
 					<td><%=c.getCategory()%></td>
 					<td>Rs<%=c.getPrice()%></td>
-					<td><form action="OrderNowServlet" method="post" class="form-inline">
+					<td><form action="epay.jsp" method="post" class="form-inline">
 							<input type="hidden" name="id" value="<%=c.getId()%>"
 								class="form-input">
 							<div class="form-group d-flex justify-content-between w-50">

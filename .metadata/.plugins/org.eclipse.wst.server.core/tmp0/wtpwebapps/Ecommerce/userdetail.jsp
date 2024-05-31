@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@page import="cn.sagar.User"%>
+<%@page import="cn.sagar.dao.*"%>
+<%@page import="java.util.*"%>
+<%@page import="cn.sagar.cart" %>
+
+<%@page import="cn.sagar.Product"%>
+<%@page import="cn.sagar.servlet.*"%>
+<%@page import="cn.sagar.connection.dbCon"%>
+    <%
+    ArrayList<User> hi = (ArrayList<User>) request.getSession().getAttribute("user-list");
+	if(hi!=null) {
+		
+		request.getSession().setAttribute("user-list",hi);
+		response.sendRedirect("userdetail.jsp");
+	}
+
+    UserDao udao = new UserDao(dbCon.getConnection());
+   	List<User> userList = udao.getAllUser();
+    
+    
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Information</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User Information</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+    <%if(!userList.isEmpty()){
+		for(User u:userList){%> 
+        <tr>
+            <td><%= u.getId() %></td>
+            <td><%= u.getName() %></td>
+            <td><%= u.getPassword() %></td>
+            <td><%= u.getEmail() %></td>
+        </tr>
+       <%} 
+        }%>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+</body>
+</html>

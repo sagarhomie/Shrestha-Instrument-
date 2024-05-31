@@ -42,7 +42,6 @@ public class SearchServlet extends HttpServlet {
 				ProductDao pdao = new ProductDao(dbCon.getConnection());
 				List<Product> list = pdao.searchedItem(searchitem);
 				if(list!=null) {
-					request.getSession().setAttribute("searchitem", list);
 				response.sendRedirect("Search.jsp");
 				}else {
 					out.println("not found");

@@ -1,0 +1,13 @@
+127.0.0.1 - - [28/May/2024:10:19:54 +0545] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:19:55 +0545] "GET /Ecommerce/login.jsp HTTP/1.1" 200 2911
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:19:55 +0545] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:20:03 +0545] "POST /Ecommerce/LoginServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:20:03 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 12996
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:20:03 +0545] "GET /Ecommerce/product-images/discount.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:20:03 +0545] "GET /Ecommerce/product-images/guitar.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:20:03 +0545] "GET /Ecommerce/product-images/guitarbass.webp HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:20:03 +0545] "GET /Ecommerce/product-images/guitarrr.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:20:34 +0545] "GET /Ecommerce/NewFile.jsp HTTP/1.1" 200 3148
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:21:38 +0545] "POST /Ecommerce/SearchServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:21:38 +0545] "GET /Ecommerce/Search.jsp HTTP/1.1" 200 2435
+0:0:0:0:0:0:0:1 - - [28/May/2024:10:21:40 +0545] "GET /Ecommerce/index.jsp HTTP/1.1" 200 12996

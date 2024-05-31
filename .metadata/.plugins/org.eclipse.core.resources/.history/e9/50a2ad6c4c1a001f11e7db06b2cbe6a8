@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cash on Delivery Only</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #333333;
+    }
+    p {
+        color: #666666;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cash on Delivery Only</h1>
+        <p>We apologize, but we only offer Cash on Delivery as a payment method at the moment.</p>
+    </div>
+</body>
+</html>
+    

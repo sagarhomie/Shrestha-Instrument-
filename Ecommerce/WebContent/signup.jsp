@@ -105,13 +105,14 @@ footer {
     </style>
 </head>
 <body>
+<%@include file="includes/header.jsp"%>
     <header>
         <h1>Sign Up - Shrestha Instrument</h1>
     </header>
     <main>
         <section class="signup-form">
             <h2>Create Your Account</h2>
-            <form action="#" method="POST">
+            <form action="Signin" method="POST">
                 <div>
                     <label for="fullname">Full Name:</label><br>
                     <input type="text" id="fullname" name="fullname" required>
@@ -129,12 +130,25 @@ footer {
                     <input type="password" id="confirm-password" name="confirm-password" required>
                 </div>
                 <div>
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" onClick="checkpass()">Sign Up</button>
                 </div>
             </form>
             <p>Already have an account? <a href="login.jsp">Log In</a></p>
         </section>
     </main>
+    <script>
+    function checkpass(){
+   let password = document.getElementByName("password");
+   let confirmpass= document.getElementByName("confirm-password");
+    
+    if (password != confirmpass) {
+        alert("Passwords do not match.");
+        
+    }
+    
+    }
+    
+    </script>
     <footer>
         <p>&copy; 2024 Shrestha Instrument. All rights reserved.</p>
     </footer>

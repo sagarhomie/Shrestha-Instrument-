@@ -23,15 +23,26 @@ if(cart_list != null){
 
 <title>login</title>
 <%@include file="includes/header.jsp"%>
-
+<style>
+ .container .img-fluid{
+aspect-ratio:16/3;
+	object-fit:cover;
+	height:5%;
+}
+h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+</style>
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
 	<div class="container">
 		<div class="card w-50 mx-auto my-5">
-			<div class="card-header text-center">User Login</div>
+			<div class="card-header text-center"><h2>User Login</h2><img src="product-images/homelogo.jpg" class="img-fluid" alt="..."></div>
 			<div class="card-body">
-				<form action="user-LoginServlet" method="post">
+			
+				<form action="LoginServlet" method="post">
 					<div class="form-group">
 						<label>Email Address</label> <input type="email"
 							class="form-control" name="Login-email"

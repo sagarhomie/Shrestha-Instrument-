@@ -16,7 +16,7 @@ if (auth != null) {
 ProductDao pd= new ProductDao(dbCon.getConnection()); 
 List<Product>products = pd.getAllProducts();
 List<Product>westernproduct=pd.getWesternProduct();
-ArrayList<cart> cart_list = (ArrayList<cart>) session.getAttribute("cart-list");
+ArrayList<cart> cart_list = (ArrayList<cart>) request.getSession().getAttribute("cart-list");
 List<cart> cartProduct = null;
 if(cart_list != null){
 	
@@ -34,12 +34,42 @@ aspect-ratio:4/3;
 object-fit:cover;
 
 }
+.banner-img {
+            width: 910px;
+            height: 344px;
+            margin:auto;
+            aspect-ratio:16/3;
+            object-fit:cover;
+            display:flex;
+            justify-content:center;
+        }
+        .offer-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .offer-text {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
 </style>
+<script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
+
 <%@include file="includes/header.jsp"%>
 
 </head>
 <body>
 	<%@include file="includes/navbar.jsp"%>
+	        <img src="product-images/discount.jpg" alt="Your Logo" class="banner-img">
+        <div class="offer-overlay">
+            <div class="offer-text">10% Off Now</div>
+        </div>
+	
 	<div class="container">
 		<div class="card-header my-3">All products</div>
 		<div class="row">
@@ -55,9 +85,8 @@ object-fit:cover;
 						<h6 class="price">Category:<%= p.getCategory()%></h6>
 						<div class="mt-7 d-flex justify-content-between">
 						<a href="cartServlet?id=<%=p.getId() %>" class="btn btn-dark">Add to cart</a>
-						<a href="OrderNowServlet?quantity=1&id=<%=p.getId() %>" class="btn btn-primary">Buy Now</a>
+						<a href="NewFile.jsp"  class="btn btn-primary" >Buy Now</a>						
 						</div>
-						
 					</div>
 					</div>
 					</div>
@@ -82,7 +111,7 @@ object-fit:cover;
 						<h6 class="price">Category:<%= ps.getCategory()%></h6>
 						<div class="mt-7 d-flex justify-content-between">
 						<a href="cartServlet?id=<%=ps.getId() %>" class="btn btn-dark">Add to cart</a>
-						<a href="OrderNowServlet?quantity=1&id=<%=ps.getId() %>" class="btn btn-primary">Buy Now</a>
+						<a href="NewFile.jsp"  class="btn btn-primary" >Buy Now</a>
 						</div>
 						
 					</div>
@@ -97,6 +126,41 @@ object-fit:cover;
 			</div>
 		
 		</div>
+		<script>
+        var config = {
+            // replace the publicKey with yours
+            "publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a390234",
+            "productIdentity": "1234567890",
+            "productName": "Dragon",
+            "productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+            "paymentPreference": [
+                "KHALTI",
+                "EBANKING",
+                "MOBILE_BANKING",
+                "CONNECT_IPS",
+                "SCT",
+                ],
+            "eventHandler": {
+                onSuccess (payload) {
+                    // hit merchant api for initiating verfication
+                    console.log(payload);
+                },
+                onError (error) {
+                    console.log(error);
+                },
+                onClose () {
+                    console.log('widget is closing');
+                }
+            }
+        };
+
+        var checkout = new KhaltiCheckout(config);
+        var btn = document.getElementById("button");
+        btn.onclick = function () {
+            // minimum transaction amount must be 10, i.e 1000 in paisa.
+            checkout.show({amount: 100000});
+        }
+    </script>
 		
 	
 	<%@include file="includes/footer.jsp"%>

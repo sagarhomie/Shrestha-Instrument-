@@ -112,13 +112,13 @@ public double getTotalCartPrice(ArrayList<cart> cartList) {
 	}
 	return sum;
 }
-public List<Product> searchedItem(String name){
+public List<Product> searchedItem(String category){
 	
 	List<Product> list = new ArrayList<Product>();
 	try{
-		query = "select * from ecommerce_product where name=?";
+		query = "select * from ecommerce_product where category=?";
 		pst = this.con.prepareStatement(query);
-		pst.setString(1,name);
+		pst.setString(1,category);
 		rs = pst.executeQuery();
 		while(rs.next()) {
 			Product search = new Product();
@@ -137,5 +137,6 @@ public List<Product> searchedItem(String name){
 	return list;
 	
 }
+
 
 }

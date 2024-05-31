@@ -15,8 +15,7 @@
 
     }
    
-    ProductDao pd= new ProductDao(dbCon.getConnection()); 
-    List<Product> products = pd.searchedItem(request.getParameter("search"));
+    
     
     %>
 <!DOCTYPE html>
@@ -28,6 +27,11 @@
 </head>
 <body>
 <%@ include file = "includes/navbar.jsp" %>
+<%
+ ProductDao pd= new ProductDao(dbCon.getConnection()); 
+    String searchitem= request.getParameter("newari musical instrument");
+    List<Product> products = pd.searchedItem(searchitem);
+    %>
 <div class="container">
 		<div class="card-header my-3">Search Item</div>
 		<div class="row">
